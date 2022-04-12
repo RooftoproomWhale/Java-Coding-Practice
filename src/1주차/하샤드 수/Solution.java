@@ -3,11 +3,11 @@ class Solution {
         boolean answer = true;
 
         int total = 0; // 자리수 합치기용 변수
+        int originNum = x;
 
-        // 1. 자리수 구하기 및 합치기
-        String[] temp = String.valueOf(x).split("");
-        for (String s : temp) {
-            total += Integer.parseInt(s);
+        while (originNum > 0) {
+            total += originNum % 10;
+            originNum /= 10;
         }
 
         if (x % total != 0) {
