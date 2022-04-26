@@ -1,18 +1,9 @@
 class Solution {
     public boolean solution(String s) {
-        if (s.startsWith("(") && s.endsWith(")")) {
-            return checkCount(s.split(""));
-        }
-        else {
-            return false;
-        }
-    }
-
-    private boolean checkCount(String[] sArr) {
         Stack<String> checkStack = new Stack<>();
 
-        for (String s : sArr) {
-            if (s.equals("(")) {
+        for (int i = 0; i<s.length(); i++) {
+            if (s.charAt(i) == '(') {
                 checkStack.push(s);
             }
             else if (checkStack.empty()) {
